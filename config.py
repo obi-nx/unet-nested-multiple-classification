@@ -13,7 +13,7 @@ class UNetConfig:
 
     def __init__(self,
                  epochs = 100,  # Number of epochs
-                 batch_size = 2,    # Batch size
+                 batch_size = 1,    # Batch size
                  validation = 10.0,   # Percent of the data that is used as validation (0-100)
                  out_threshold = 0.5,
 
@@ -25,8 +25,8 @@ class UNetConfig:
                  momentum=0.9,
                  nesterov=True,
 
-                 n_channels = 3, # Number of channels in input images
-                 n_classes = 3,  # Number of classes in the segmentation
+                 n_channels = 1, # Number of channels in input images
+                 n_classes = 4,  # Number of classes in the segmentation
                  scale = 1,    # Downscaling factor of the images
 
                  load = False,   # Load model from a .pth file
