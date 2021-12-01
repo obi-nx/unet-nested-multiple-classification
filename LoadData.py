@@ -10,8 +10,7 @@ os.makedirs("data", exist_ok=True)
 os.makedirs(image_save_path, exist_ok=True)
 os.makedirs(mask_save_path, exist_ok=True)
 counter = 0
-for i in range(1, 25):
-    patient = "patient" + str(i)
+for patient in os.listdir(path):
     images = os.path.join(path, patient, image_path)
     masks = os.path.join(path, patient, mask_path)
     for image, mask in zip(os.listdir(images), os.listdir(masks)):
