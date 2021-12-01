@@ -13,7 +13,7 @@ class UNetConfig:
 
     def __init__(self,
                  epochs = 100,  # Number of epochs
-                 batch_size = 1,    # Batch size
+                 batch_size = 2,    # Batch size
                  validation = 10.0,   # Percent of the data that is used as validation (0-100)
                  out_threshold = 0.5,
 
