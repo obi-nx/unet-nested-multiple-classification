@@ -6,6 +6,9 @@ image_path = os.path.join("raw", "labeled")
 mask_path = os.path.join("mask", "number")
 image_save_path = os.path.join(".", "data", "images")
 mask_save_path = os.path.join(".", "data", "masks")
+os.makedirs("data", exist_ok=True)
+os.makedirs(image_save_path, exist_ok=True)
+os.makedirs(mask_save_path, exist_ok=True)
 counter = 0
 for i in range(1, 25):
     patient = "patient" + str(i)
