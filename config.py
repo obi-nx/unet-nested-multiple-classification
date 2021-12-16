@@ -26,7 +26,7 @@ class UNetConfig:
                  nesterov=True,
 
                  n_channels = 1, # Number of channels in input images
-                 n_classes = 4,  # Number of classes in the segmentation
+                 n_classes = 9,  # Number of classes in the segmentation
                  scale = 1,    # Downscaling factor of the images
 
                  load = False,   # Load model from a .pth file
