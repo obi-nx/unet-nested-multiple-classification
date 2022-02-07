@@ -7,17 +7,28 @@
 
 """
 import os
+from os.path import join
+from enum import Enum
+
+
+# Paths
+ROOT = os.getcwd()
+DATASET = join(ROOT, "dataset")
+RAW_DATA = join(ROOT, "raw_data")
+CLAHE_DATA = join(ROOT, "clahe_data")
+NLMEANS_DATA = join(ROOT, "nlmeans_data")
+ESRGAN_DATA = join(ROOT, "esrgan_data")
 
 
 class UNetConfig:
 
     def __init__(self,
-                 epochs = 100,  # Number of epochs
-                 batch_size = 2,    # Batch size
+                 epochs = 500,  # Number of epochs
+                 batch_size = 1,    # Batch size
                  validation = 10.0,   # Percent of the data that is used as validation (0-100)
                  out_threshold = 0.5,
 
-                 optimizer='SGD',
+                 optimizer='Adam',
                  lr = 0.0001,     # learning rate
                  lr_decay_milestones = [20, 50],
                  lr_decay_gamma = 0.9,
@@ -26,21 +37,21 @@ class UNetConfig:
                  nesterov=True,
 
                  n_channels = 1, # Number of channels in input images
-                 n_classes = 9,  # Number of classes in the segmentation
+                 n_classes = 8,  # Number of classes in the segmentation
                  scale = 1,    # Downscaling factor of the images
 
                  load = False,   # Load model from a .pth file
                  save_cp = True,
 
-                 model='NestedUNet',
+                 model='UNet',
                  bilinear = True,
-                 deepsupervision = True,
+                 deepsupervision = False,
                  ):
         super(UNetConfig, self).__init__()
 
-        self.images_dir = './data/images'
-        self.masks_dir = './data/masks'
-        self.checkpoints_dir = './data/checkpoints'
+        self.images_dir = join(CLAHE_DATA, "images")
+        self.masks_dir = join(CLAHE_DATA, "masks")
+        self.checkpoints_dir = join(CLAHE_DATA, "checkpoints")
 
         self.epochs = epochs
         self.batch_size = batch_size
@@ -67,3 +78,5 @@ class UNetConfig:
         self.deepsupervision = deepsupervision
 
         os.makedirs(self.checkpoints_dir, exist_ok=True)
+
+

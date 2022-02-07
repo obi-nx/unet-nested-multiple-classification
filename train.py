@@ -45,12 +45,12 @@ def train_net(net, cfg):
     train_loader = DataLoader(train,
                               batch_size=cfg.batch_size,
                               shuffle=True,
-                              num_workers=8,
+                              num_workers=1,
                               pin_memory=True)
     val_loader = DataLoader(val,
                             batch_size=cfg.batch_size,
                             shuffle=False,
-                            num_workers=8,
+                            num_workers=1,
                             pin_memory=True)
 
     writer = SummaryWriter(comment=f'LR_{cfg.lr}_BS_{cfg.batch_size}_SCALE_{cfg.scale}')
