@@ -41,9 +41,9 @@ class UNetConfig:
                  scale = 1,    # Downscaling factor of the images
 
                  load = False,   # Load model from a .pth file
-                 save_cp = True,
+                 save_cp = False,
 
-                 model='UNet',
+                 model='NestedUNet',
                  bilinear = True,
                  deepsupervision = False,
                  ):
