@@ -19,10 +19,10 @@ from torchvision import transforms
 from PIL import Image
 from tqdm import tqdm
 
-from unet import NestedUNet
-from unet import UNet
-from utils.dataset import BasicDataset
-from config import UNetConfig
+from .unet import NestedUNet
+from .unet import UNet
+from .utils.dataset import BasicDataset
+from .config import UNetConfig
 
 cfg = UNetConfig()
 
