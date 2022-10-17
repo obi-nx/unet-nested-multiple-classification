@@ -77,6 +77,4 @@ class UNetConfig:
         self.bilinear = bilinear
         self.deepsupervision = deepsupervision
 
-        os.makedirs(self.checkpoints_dir, exist_ok=True)
-
 
